@@ -1,5 +1,5 @@
 {% set name = "cmake-build-extension" %}
-{% set version = "0.5.0" %}
+{% set version = "0.5.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/cmake-build-extension-{{ version }}.tar.gz
-  sha256: 75a8e866544976e213aad31799f6a9b68a5135cf37cc41af29c1706446d56155
+  sha256: 8206db07bf60ae1a51e555a15d474429c11aefd84d421324b3d723ac816fa81a
 
 build:
   number: 0
