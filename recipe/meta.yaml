@@ -6,20 +6,20 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
   sha256: bfb5edbe2d62b3ae82c6d54a5f0bac5a3c8692d70f816386a4a022dfd18c9c3e
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install --no-deps . -vv
 
 requirements:
   host:
     - pip
-    - python >=3.8
+    - python {{ python_min }}
   run:
-    - python >=3.8
+    - python >={{ python_min }}
     - cmake
     - gitpython
     - ninja
@@ -39,6 +39,7 @@ test:
     - pybind11
     - pytest
     - swig
+    - python {{ python_min }}
   source_files:
     - example
 
